@@ -1,0 +1,7 @@
+.navbar {
+    display: flex;
+}
+
+.navbar > ul li {
+    display: inline;
+}
