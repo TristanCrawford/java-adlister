@@ -17,7 +17,8 @@ public class AdServlet extends HttpServlet {
 
             String adId = req.getParameter("id");
             Ad ad = listAdsDao.all().stream().filter(a -> adId.equals(Long.toString(a.getId()))).findFirst().orElse(null);
-            if(null == adId || null == ad) {
+
+            if(null == adId || adId.isEmpty() || null == ad) {
                 resp.sendRedirect("/ads");
                 return;
             }
